@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+@import './modules/variables';
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body { font-family: $font-family-base; }
+a {
+  color: $color-link;
+  transition: .3s all;
+
+  &:hover {
+    opacity: .6;
+    text-decoration: none;
+  }
+}
+
+.wrap {
+  overflow: hidden;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 1080px;
+
+  &.main--single {
+    max-width: 760px;
+  }
+}
+
+@import './modules/header';
+@import './modules/footer';
+@import './modules/list';
+@import './modules/single';
+@import './modules/other';

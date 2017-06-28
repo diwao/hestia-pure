@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.header {
+  margin-bottom: 3em;
+  padding-top: 1em;
+  text-align: center;
+
+  a {
+    color: $color-key;
+    text-decoration: none;
+  }
+}
+
+.site-title {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  margin: .67em 0;
+}
+
+.search {
+  margin: 0 auto;
+  width: 300px;
+
+  * {
+    box-sizing: content-box;
+    // font-size: 1rem;
+  }
+}

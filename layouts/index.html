@@ -1,0 +1,24 @@
+{{ partial "header.html" . }}
+<main class="main">
+  <section class="articles">
+    <h2>Recent Post</h2>
+    <div class="pure-g">
+      {{ range (.Paginator 12).Pages }}
+        {{ .Render "list" }}
+      {{ end }}
+    </div>
+  </section>
+
+  {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+    <nav class="pagination">
+      {{ if .Paginator.HasPrev }}
+      <a class="pagination__link pagination__link--prev" href="{{ .Paginator.Prev.URL }}">&lt; Prev</a>
+      {{ end }}
+      <span class="pagination__current">{{ .Paginator.PageNumber}} / {{ .Paginator.TotalPages }} Page</span>
+      {{ if .Paginator.HasNext }}
+      <a class="pagination__link pagination__link--next" href="{{ .Paginator.Next.URL }}">Next &gt;</a>
+      {{ end }}
+    </nav>
+    {{ end }}
+</main>
+{{ partial "footer.html" . }}

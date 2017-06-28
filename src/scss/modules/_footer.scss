@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+.footer {
+  background-color: slategray;
+  margin-top: 5em;
+  padding: 1em 0 3em;
+  text-align: center;
+
+  small {
+    font-size: 1em;
+  }
+}
+
+.author {
+  align-items: center;
+  margin: 0 auto;
+  max-width: 760px;
+  padding: 0 5%;
+  text-align: left;
+}
+
+.author__image img {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.author__info {
+  padding-left: 5%;
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.author__links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+
+  li {
+    height: 30px;
+    margin-left: .8em;
+    width: 30px;
+  }
+
+  a {
+    &:hover {
+      img {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  img {
+    transition: .6s all;
+    width: 100%;
+  }
+}

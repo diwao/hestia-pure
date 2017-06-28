@@ -1,6 +1,15 @@
-{{ partial "header.html" . }}
-<main class="main">
-  <h2>404 Page not found.</h2>
-  <p>お探しのページは見つかりませんでした。入力したURLが間違っているかページが削除された可能性があります。</p>
-  <p>URLをご確認のうえ再読み込みを行うか、<a href="/">トップページ</a>へとお戻りくださいm(_ _)m</p>
-</main>
+<!DOCTYPE html>
+<html lang="ja">
+{{ partial "head" . }}
+<body>
+  <div id="wrap" class="wrap">
+    {{ partial "header" . }}
+    <main class="main">
+      <h2>404 Page not found.</h2>
+      <p>お探しのページは見つかりませんでした。入力したURLが間違っているかページが削除された可能性があります。</p>
+      <p>URLをご確認のうえ再読み込みを行うか、<a href="/">トップページ</a>へとお戻りくださいm(_ _)m</p>
+    </main>
+  </div>
+{{ partial "js" . }}
+</body>
+</html>

@@ -1,0 +1,49 @@
+<head>
+  <meta charset="utf-8">
+  <title>{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} - {{ .Site.Title }}{{ end }}</title>
+  {{ .Hugo.Generator }}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="diwao">
+  {{ if eq $isHomePage true }}
+  <meta name="description" content="{{ .Site.Params.description }}">
+  {{ else }}
+  <meta name="description" content="{{ .Summary }}">
+  {{ end }}
+  <meta name="keywords" content="{{ .Site.Params.keywords }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  {{ if and (.Params.image) (ne .Params.image "") }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.image }}">
+  {{ else }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}image/theme/og.png">
+  {{ end }}
+  {{ if eq $isHomePage true }}
+  <meta property="og:description" content="{{ .Site.Params.description }}">
+  {{ else }}
+  <meta property="og:description" content="{{ .Summary }}">
+  {{ end }}
+  <meta property="og:type" content="blog">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@{{ .Site.Params.twitter }}">
+  <meta name="twitter:title" content="{{ .Title }}">
+  <meta name="twitter:url" content="{{ .Permalink }}">
+  {{ if eq $isHomePage true }}
+  <meta name="twitter:description" content="{{ .Site.Params.description }}">
+  {{ else }}
+  <meta name="twitter:description" content="{{ .Summary }}">
+  {{ end }}
+  {{ if and (.Params.image) (ne .Params.image "") }}
+  <meta name="twitter:image:src" content="{{ .Site.BaseURL }}{{ .Params.image }}">
+  {{ else }}
+  <meta name="twitter:image:src" content="{{ .Site.BaseURL }}image/theme/og.png">
+  {{ end }}
+  <link rel="shortcut icon" href="{{ .Site.BaseURL }}image/theme/favicon.ico">
+  <link href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css" rel="stylesheet" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
+  <link rel="alternate" href="{{ .Site.BaseURL }}index.xml" type="application/rss+xml" title="{{ .Site.Title }}">
+</head>

@@ -1,72 +1,46 @@
-    <footer class="footer">
-      <section class="author">
-        <h2>Author</h2>
-        <div class="pure-g">
-          <div class="author__image pure-u-1-5 pure-u-md-1-8">
-            <img src="{{ .Site.BaseURL }}image/theme/author.png" alt="">
-          </div>
-          <div class="author__info pure-u-4-5 pure-u-md-7-8">
-            {{ if and (.Site.Author.author) (ne .Site.Author.author "") }}
-            <h3>{{ .Site.Author.author }}</h3>
-            {{ else }}
-            <h3>Daisuke Iwao</h3>
-            {{ end }}
-            {{ if and (.Site.Author.profile) (ne .Site.Author.profile "") }}
-            <p>{{ .Site.Author.profile }}</p>
-            {{ else }}
-            <p>I am a frontend engineer working in Sendai City, Japan.</p>
-            {{ end }}
-            <ul class="author__links">
-              {{ if and (.Site.Params.github) (ne .Site.Params.github "") }}
-              <li>
-                <a href="https://github.com/{{.Site.Params.github}}" target="_blank">
-                  <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIxMDI0IiB3aWR0aD0iMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNTEyIDBDMjI5LjI1IDAgMCAyMjkuMjUgMCA1MTJjMCAyMjYuMjUgMTQ2LjY4OCA0MTguMTI1IDM1MC4xNTYgNDg1LjgxMiAyNS41OTQgNC42ODggMzQuOTM4LTExLjEyNSAzNC45MzgtMjQuNjI1IDAtMTIuMTg4LTAuNDY5LTUyLjU2Mi0wLjcxOS05NS4zMTJDMjQyIDkwOC44MTIgMjExLjkwNiA4MTcuNSAyMTEuOTA2IDgxNy41Yy0yMy4zMTItNTkuMTI1LTU2Ljg0NC03NC44NzUtNTYuODQ0LTc0Ljg3NS00Ni41MzEtMzEuNzUgMy41My0zMS4xMjUgMy41My0zMS4xMjUgNTEuNDA2IDMuNTYyIDc4LjQ3IDUyLjc1IDc4LjQ3IDUyLjc1IDQ1LjY4OCA3OC4yNSAxMTkuODc1IDU1LjYyNSAxNDkgNDIuNSA0LjY1NC0zMyAxNy45MDQtNTUuNjI1IDMyLjUtNjguMzc1QzMwNC45MDYgNzI1LjQzOCAxODUuMzQ0IDY4MS41IDE4NS4zNDQgNDg1LjMxMmMwLTU1LjkzOCAxOS45NjktMTAxLjU2MiA1Mi42NTYtMTM3LjQwNi01LjIxOS0xMy0yMi44NDQtNjUuMDk0IDUuMDYyLTEzNS41NjIgMCAwIDQyLjkzOC0xMy43NSAxNDAuODEyIDUyLjUgNDAuODEyLTExLjQwNiA4NC41OTQtMTcuMDMxIDEyOC4xMjUtMTcuMjE5IDQzLjUgMC4xODggODcuMzEyIDUuODc1IDEyOC4xODggMTcuMjgxIDk3LjY4OC02Ni4zMTIgMTQwLjY4OC01Mi41IDE0MC42ODgtNTIuNSAyOCA3MC41MzEgMTAuMzc1IDEyMi41NjIgNS4xMjUgMTM1LjUgMzIuODEyIDM1Ljg0NCA1Mi42MjUgODEuNDY5IDUyLjYyNSAxMzcuNDA2IDAgMTk2LjY4OC0xMTkuNzUgMjQwLTIzMy44MTIgMjUyLjY4OCAxOC40MzggMTUuODc1IDM0Ljc1IDQ3IDM0Ljc1IDk0Ljc1IDAgNjguNDM4LTAuNjg4IDEyMy42MjUtMC42ODggMTQwLjUgMCAxMy42MjUgOS4zMTIgMjkuNTYyIDM1LjI1IDI0LjU2MkM4NzcuNDM4IDkzMCAxMDI0IDczOC4xMjUgMTAyNCA1MTIgMTAyNCAyMjkuMjUgNzk0Ljc1IDAgNTEyIDB6Ii8+PC9zdmc+" alt="">
-                </a>
-              </li>
-              {{ end }}
-              {{ if and (.Site.Params.twitter) (ne .Site.Params.twitter "") }}
-              <li>
-                <a href="https://twitter.com/{{.Site.Params.twitter}}" target="_blank">
-                  <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI1MDAiIGlkPSJzdmcyIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI1MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzIGlkPSJkZWZzNCIvPjxnIGlkPSJsYXllcjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsLTU1Mi4zNjIxOCkiPjxyZWN0IGhlaWdodD0iNTAwIiBpZD0icmVjdDI5OTAtMSIgcng9IjI1MCIgcnk9IjI1MCIgc3R5bGU9ImZpbGw6IzU1YWNlZTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZSIgd2lkdGg9IjUwMCIgeD0iMCIgeT0iNTUyLjM2MjE4Ii8+PGcgaWQ9ImxheWVyMS05IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNTQ5LjAwNTE1LDgwLjI5NDM3MikiLz48ZyBpZD0ibGF5ZXIxLTYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC01NzUuNzE0MjksMzkuOTk5OTk5KSIvPjxnIGlkPSJsYXllcjEtOTMiIHRyYW5zZm9ybT0ibWF0cml4KDAuOTk5Mjg5NDUsMCwwLDAuOTk5Mjg5NDUsNDc0LjcwMDIsLTQwLjgxOTI4KSIvPjxwYXRoIGQ9Im0gMzA5Ljg1LDY3Mi4zMTIxOCBjIC0zNS40NzA3OSwwLjg5ODc5IC02My45MjUsMjkuOTMxMzggLTYzLjkyNSw2NS42MjUgMCw1LjEzODI3IDAuNTUxMjIsMTAuMTYxNTYgMS42NzUsMTQuOTc1IC01NC41NjU2NywtMi43NDEyNiAtMTAyLjk0Mjg3LC0yOC44Nzc0OSAtMTM1LjMyNSwtNjguNiAtNS42NTE0Nyw5LjY5MTkxIC04LjksMjAuOTgxNTggLTguOSwzMy4wMjUgMCwyMi43NzQ2NyAxMS42MDgwOSw0Mi44NTQzOCAyOS4yMjUsNTQuNjI1IC0xMC43NTcyMiwtMC4zNDQyOCAtMjAuODk2MDYsLTMuMzA3NTggLTI5Ljc1LC04LjIyNSAtMC4wMDUsMC4yNzI4MiAwLDAuNTcwNjkgMCwwLjg1IDAsMzEuODA0MDIgMjIuNjM3OSw1OC4zMDg4IDUyLjY3NSw2NC4zNSAtNS41MDg1MiwxLjQ5NDA2IC0xMS4zMTA3NSwyLjMgLTE3LjMsMi4zIC00LjIzNTM0LDAgLTguMzQyMDMsLTAuNDAxOTggLTEyLjM1LC0xLjE3NSA4LjM2MDIyLDI2LjA4MTA5IDMyLjU3NTA2LDQ1LjA3Mzg1IDYxLjMsNDUuNiAtMjIuNDY5MzcsMTcuNjEwNDMgLTUwLjczNTM0LDI4LjEgLTgxLjUsMjguMSAtNS4yOTQxNiwwIC0xMC41MzY3NSwtMC4yODkzOCAtMTUuNjc1LC0wLjkgMjkuMDYyNzIsMTguNjM2ODMgNjMuNTUyODIsMjkuNSAxMDAuNjI1LDI5LjUgMTIwLjc2NTUyLDAgMTg2LjgsLTEwMC4wNDA1OCAxODYuOCwtMTg2LjggMCwtMi44NDUyIC0wLjA1MTcsLTUuNzA1NzcgLTAuMTc1LC04LjUyNSAxMi44MjI5NCwtOS4yMzcyIDIzLjk1NDU0LC0yMC44MDc3NiAzMi43NSwtMzMuOTc1IC0xMS43NjQxLDUuMjI5MjIgLTI0LjQxNTg2LDguNzcxNDYgLTM3LjcsMTAuMzUgMTMuNTYzNDYsLTguMTE5OSAyMy45NzA2MSwtMjAuOTgxNjYgMjguODc1LC0zNi4zMjUgLTEyLjY4NjUyLDcuNTI4NzcgLTI2LjczOTkzLDEzLjAwMDg1IC00MS43LDE1Ljk1IC0xMS45NzE5NywtMTIuNzU3OTggLTI5LjA0MTM3LC0yMC43MjUgLTQ3LjkyNSwtMjAuNzI1IC0wLjU2NjQ2LDAgLTEuMTM2OTgsLTAuMDE0MyAtMS43LDAgeiIgaWQ9InJlY3QyOTg5IiBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lIi8+PC9nPjwvc3ZnPg==" alt="">
-                </a>
-              </li>
-              {{ end }}
-              {{ if and (.Site.Params.facebook) (ne .Site.Params.facebook "") }}
-              <li>
-                <a href="https://www.facebook.com/{{.Site.Params.facebook}}" target="_blank">
-                  <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI1MDAiIGlkPSJzdmcyIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI1MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzIGlkPSJkZWZzNCIvPjxnIGlkPSJsYXllcjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsLTU1Mi4zNjIxOCkiPjxyZWN0IGhlaWdodD0iNTAwIiBpZD0icmVjdDM3NTgtMSIgcng9IjI1MCIgcnk9IjI1MCIgc3R5bGU9ImZpbGw6IzQ1NjE5ZDtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZSIgd2lkdGg9IjUwMCIgeD0iMCIgeT0iNTUyLjM2MjE4Ii8+PHBhdGggZD0iTSAyODkuNjg3NSA2MCBDIDIyMS45MDMxNyA2MCAxOTkuNTMxMjUgOTEuMTAwNTcgMTk5LjUzMTI1IDE0NC40Mzc1IEwgMTk5LjUzMTI1IDE4Ni42NTYyNSBMIDE1NSAxODYuNjU2MjUgTCAxNTUgMjUwLjAzMTI1IEwgMTk5LjUzMTI1IDI1MC4wMzEyNSBMIDE5OS41MzEyNSA0NDAgTCAyODEuNjU2MjUgNDQwIEwgMjgxLjY1NjI1IDI1MC4wMzEyNSBMIDMzNy40Njg3NSAyNTAuMDMxMjUgTCAzNDQuOTY4NzUgMTg2LjY1NjI1IEwgMjgxLjY1NjI1IDE4Ni42NTYyNSBMIDI4MS42NTYyNSAxNDkgQyAyODEuNjU2MjUgMTMxLjk3OTY2IDI4NS4zOTE0OCAxMjMuMzQzNzUgMzExLjgxMjUgMTIzLjM0Mzc1IEwgMzQ0Ljk2ODc1IDEyMy4zNDM3NSBMIDM0NC45Njg3NSA2MCBMIDI4OS42ODc1IDYwIHogIiBpZD0icmVjdDI5ODktMSIgc3R5bGU9ImZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCw1NTIuMzYyMTgpIi8+PC9nPjwvc3ZnPg==" alt="">
-                </a>
-              </li>
-              {{ end }}
-            </ul>
-          </div>
-        </div>
-      </section>
-      <small>©{{ .Site.Title }}</small>
-    </footer>
-  </div>
-{{ with .Site.Params.googlecustomsearch }}
-<script>
-  (function() {
-    var cx = '{{ . }}';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>{{ end }}
-{{ with .Site.Params.googleanalytics }}<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	ga('create', '{{ . }}', 'auto');
-	ga('send', 'pageview');
-</script>{{ end }}
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<script src="{{ .Site.BaseURL }}js/script.js"></script>
-</body>
-</html>
+<footer class="footer">
+  <section class="author">
+    <h2>Author</h2>
+    <div class="pure-g">
+      <div class="author__image pure-u-1-5 pure-u-md-1-8">
+        <img src="{{ .Site.BaseURL }}image/theme/author.png" alt="">
+      </div>
+      <div class="author__info pure-u-4-5 pure-u-md-7-8">
+        {{ if and (.Site.Author.author) (ne .Site.Author.author "") }}
+        <h3>{{ .Site.Author.author }}</h3>
+        {{ else }}
+        <h3>Daisuke Iwao</h3>
+        {{ end }}
+        {{ if and (.Site.Author.profile) (ne .Site.Author.profile "") }}
+        <p>{{ .Site.Author.profile }}</p>
+        {{ else }}
+        <p>I am a frontend engineer working in Sendai City, Japan.</p>
+        {{ end }}
+        <ul class="author__links">
+          {{ if and (.Site.Params.github) (ne .Site.Params.github "") }}
+          <li>
+            <a href="https://github.com/{{.Site.Params.github}}" target="_blank">
+              <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIxMDI0IiB3aWR0aD0iMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNTEyIDBDMjI5LjI1IDAgMCAyMjkuMjUgMCA1MTJjMCAyMjYuMjUgMTQ2LjY4OCA0MTguMTI1IDM1MC4xNTYgNDg1LjgxMiAyNS41OTQgNC42ODggMzQuOTM4LTExLjEyNSAzNC45MzgtMjQuNjI1IDAtMTIuMTg4LTAuNDY5LTUyLjU2Mi0wLjcxOS05NS4zMTJDMjQyIDkwOC44MTIgMjExLjkwNiA4MTcuNSAyMTEuOTA2IDgxNy41Yy0yMy4zMTItNTkuMTI1LTU2Ljg0NC03NC44NzUtNTYuODQ0LTc0Ljg3NS00Ni41MzEtMzEuNzUgMy41My0zMS4xMjUgMy41My0zMS4xMjUgNTEuNDA2IDMuNTYyIDc4LjQ3IDUyLjc1IDc4LjQ3IDUyLjc1IDQ1LjY4OCA3OC4yNSAxMTkuODc1IDU1LjYyNSAxNDkgNDIuNSA0LjY1NC0zMyAxNy45MDQtNTUuNjI1IDMyLjUtNjguMzc1QzMwNC45MDYgNzI1LjQzOCAxODUuMzQ0IDY4MS41IDE4NS4zNDQgNDg1LjMxMmMwLTU1LjkzOCAxOS45NjktMTAxLjU2MiA1Mi42NTYtMTM3LjQwNi01LjIxOS0xMy0yMi44NDQtNjUuMDk0IDUuMDYyLTEzNS41NjIgMCAwIDQyLjkzOC0xMy43NSAxNDAuODEyIDUyLjUgNDAuODEyLTExLjQwNiA4NC41OTQtMTcuMDMxIDEyOC4xMjUtMTcuMjE5IDQzLjUgMC4xODggODcuMzEyIDUuODc1IDEyOC4xODggMTcuMjgxIDk3LjY4OC02Ni4zMTIgMTQwLjY4OC01Mi41IDE0MC42ODgtNTIuNSAyOCA3MC41MzEgMTAuMzc1IDEyMi41NjIgNS4xMjUgMTM1LjUgMzIuODEyIDM1Ljg0NCA1Mi42MjUgODEuNDY5IDUyLjYyNSAxMzcuNDA2IDAgMTk2LjY4OC0xMTkuNzUgMjQwLTIzMy44MTIgMjUyLjY4OCAxOC40MzggMTUuODc1IDM0Ljc1IDQ3IDM0Ljc1IDk0Ljc1IDAgNjguNDM4LTAuNjg4IDEyMy42MjUtMC42ODggMTQwLjUgMCAxMy42MjUgOS4zMTIgMjkuNTYyIDM1LjI1IDI0LjU2MkM4NzcuNDM4IDkzMCAxMDI0IDczOC4xMjUgMTAyNCA1MTIgMTAyNCAyMjkuMjUgNzk0Ljc1IDAgNTEyIDB6Ii8+PC9zdmc+" alt="">
+            </a>
+          </li>
+          {{ end }}
+          {{ if and (.Site.Params.twitter) (ne .Site.Params.twitter "") }}
+          <li>
+            <a href="https://twitter.com/{{.Site.Params.twitter}}" target="_blank">
+              <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI1MDAiIGlkPSJzdmcyIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI1MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzIGlkPSJkZWZzNCIvPjxnIGlkPSJsYXllcjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsLTU1Mi4zNjIxOCkiPjxyZWN0IGhlaWdodD0iNTAwIiBpZD0icmVjdDI5OTAtMSIgcng9IjI1MCIgcnk9IjI1MCIgc3R5bGU9ImZpbGw6IzU1YWNlZTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZSIgd2lkdGg9IjUwMCIgeD0iMCIgeT0iNTUyLjM2MjE4Ii8+PGcgaWQ9ImxheWVyMS05IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNTQ5LjAwNTE1LDgwLjI5NDM3MikiLz48ZyBpZD0ibGF5ZXIxLTYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC01NzUuNzE0MjksMzkuOTk5OTk5KSIvPjxnIGlkPSJsYXllcjEtOTMiIHRyYW5zZm9ybT0ibWF0cml4KDAuOTk5Mjg5NDUsMCwwLDAuOTk5Mjg5NDUsNDc0LjcwMDIsLTQwLjgxOTI4KSIvPjxwYXRoIGQ9Im0gMzA5Ljg1LDY3Mi4zMTIxOCBjIC0zNS40NzA3OSwwLjg5ODc5IC02My45MjUsMjkuOTMxMzggLTYzLjkyNSw2NS42MjUgMCw1LjEzODI3IDAuNTUxMjIsMTAuMTYxNTYgMS42NzUsMTQuOTc1IC01NC41NjU2NywtMi43NDEyNiAtMTAyLjk0Mjg3LC0yOC44Nzc0OSAtMTM1LjMyNSwtNjguNiAtNS42NTE0Nyw5LjY5MTkxIC04LjksMjAuOTgxNTggLTguOSwzMy4wMjUgMCwyMi43NzQ2NyAxMS42MDgwOSw0Mi44NTQzOCAyOS4yMjUsNTQuNjI1IC0xMC43NTcyMiwtMC4zNDQyOCAtMjAuODk2MDYsLTMuMzA3NTggLTI5Ljc1LC04LjIyNSAtMC4wMDUsMC4yNzI4MiAwLDAuNTcwNjkgMCwwLjg1IDAsMzEuODA0MDIgMjIuNjM3OSw1OC4zMDg4IDUyLjY3NSw2NC4zNSAtNS41MDg1MiwxLjQ5NDA2IC0xMS4zMTA3NSwyLjMgLTE3LjMsMi4zIC00LjIzNTM0LDAgLTguMzQyMDMsLTAuNDAxOTggLTEyLjM1LC0xLjE3NSA4LjM2MDIyLDI2LjA4MTA5IDMyLjU3NTA2LDQ1LjA3Mzg1IDYxLjMsNDUuNiAtMjIuNDY5MzcsMTcuNjEwNDMgLTUwLjczNTM0LDI4LjEgLTgxLjUsMjguMSAtNS4yOTQxNiwwIC0xMC41MzY3NSwtMC4yODkzOCAtMTUuNjc1LC0wLjkgMjkuMDYyNzIsMTguNjM2ODMgNjMuNTUyODIsMjkuNSAxMDAuNjI1LDI5LjUgMTIwLjc2NTUyLDAgMTg2LjgsLTEwMC4wNDA1OCAxODYuOCwtMTg2LjggMCwtMi44NDUyIC0wLjA1MTcsLTUuNzA1NzcgLTAuMTc1LC04LjUyNSAxMi44MjI5NCwtOS4yMzcyIDIzLjk1NDU0LC0yMC44MDc3NiAzMi43NSwtMzMuOTc1IC0xMS43NjQxLDUuMjI5MjIgLTI0LjQxNTg2LDguNzcxNDYgLTM3LjcsMTAuMzUgMTMuNTYzNDYsLTguMTE5OSAyMy45NzA2MSwtMjAuOTgxNjYgMjguODc1LC0zNi4zMjUgLTEyLjY4NjUyLDcuNTI4NzcgLTI2LjczOTkzLDEzLjAwMDg1IC00MS43LDE1Ljk1IC0xMS45NzE5NywtMTIuNzU3OTggLTI5LjA0MTM3LC0yMC43MjUgLTQ3LjkyNSwtMjAuNzI1IC0wLjU2NjQ2LDAgLTEuMTM2OTgsLTAuMDE0MyAtMS43LDAgeiIgaWQ9InJlY3QyOTg5IiBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lIi8+PC9nPjwvc3ZnPg==" alt="">
+            </a>
+          </li>
+          {{ end }}
+          {{ if and (.Site.Params.facebook) (ne .Site.Params.facebook "") }}
+          <li>
+            <a href="https://www.facebook.com/{{.Site.Params.facebook}}" target="_blank">
+              <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI1MDAiIGlkPSJzdmcyIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI1MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzIGlkPSJkZWZzNCIvPjxnIGlkPSJsYXllcjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsLTU1Mi4zNjIxOCkiPjxyZWN0IGhlaWdodD0iNTAwIiBpZD0icmVjdDM3NTgtMSIgcng9IjI1MCIgcnk9IjI1MCIgc3R5bGU9ImZpbGw6IzQ1NjE5ZDtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZSIgd2lkdGg9IjUwMCIgeD0iMCIgeT0iNTUyLjM2MjE4Ii8+PHBhdGggZD0iTSAyODkuNjg3NSA2MCBDIDIyMS45MDMxNyA2MCAxOTkuNTMxMjUgOTEuMTAwNTcgMTk5LjUzMTI1IDE0NC40Mzc1IEwgMTk5LjUzMTI1IDE4Ni42NTYyNSBMIDE1NSAxODYuNjU2MjUgTCAxNTUgMjUwLjAzMTI1IEwgMTk5LjUzMTI1IDI1MC4wMzEyNSBMIDE5OS41MzEyNSA0NDAgTCAyODEuNjU2MjUgNDQwIEwgMjgxLjY1NjI1IDI1MC4wMzEyNSBMIDMzNy40Njg3NSAyNTAuMDMxMjUgTCAzNDQuOTY4NzUgMTg2LjY1NjI1IEwgMjgxLjY1NjI1IDE4Ni42NTYyNSBMIDI4MS42NTYyNSAxNDkgQyAyODEuNjU2MjUgMTMxLjk3OTY2IDI4NS4zOTE0OCAxMjMuMzQzNzUgMzExLjgxMjUgMTIzLjM0Mzc1IEwgMzQ0Ljk2ODc1IDEyMy4zNDM3NSBMIDM0NC45Njg3NSA2MCBMIDI4OS42ODc1IDYwIHogIiBpZD0icmVjdDI5ODktMSIgc3R5bGU9ImZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCw1NTIuMzYyMTgpIi8+PC9nPjwvc3ZnPg==" alt="">
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </section>
+  <small>©{{ .Site.Title }}</small>
+</footer>

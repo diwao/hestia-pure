@@ -32,7 +32,12 @@
     padding-left: .5em;
   }
 
-  > p code {
+  li + li {
+    margin-top: .5em;
+  }
+
+  > p code,
+  li code {
     background-color: #282c34;
     border-radius: 3px;
     color: #abb2bf;

@@ -1,6 +1,6 @@
 <header class="header">
   {{ $isHomePage := eq .Title .Site.Title }}{{ if eq $isHomePage true }}
-  <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>{{ end }}{{ if eq $isHomePage false }}<div class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>{{ end }}
+  <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>{{ end }}{{ if eq $isHomePage false }}<div class="site-title"><a href="/">{{ .Site.Title }}</a></div>{{ end }}
   <p class="site-desc">{{ .Site.Params.description }}</p>
   {{ if .Site.Params.googlecustomsearch }}
   <div class="search">

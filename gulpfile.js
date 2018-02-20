@@ -24,7 +24,7 @@ const autoprefixerOptions = {
 
 // 各タスク読み込み
 gulp.task('style', function(){
-  const src = './src/scss/*.scss';
+  const src = './src/scss/**/*.scss';
   const dest = './static/css';
   return gulp.src(src)
     .pipe(plumber({
@@ -44,5 +44,5 @@ gulp.task('style', function(){
 
 // デフォルトタスク
 gulp.task('default', function(){
-  gulp.watch('./src/scss/*.scss', ['style']);
+  gulp.watch('./src/scss/**/*.scss', ['style']);
 });

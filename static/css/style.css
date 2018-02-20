@@ -23,7 +23,7 @@ a {
   margin: 0 auto;
   max-width: 1080px; }
   .main.main--single {
-    max-width: 760px; }
+    max-width: 620px; }
 
 .header {
   margin-bottom: 3em;
@@ -143,6 +143,14 @@ a {
 .post-nav {
   padding: 0 5%; }
 
+.post {
+  color: #444; }
+  .post__title {
+    font-size: 1.6em; }
+  .post__date {
+    color: #c2c6cc;
+    text-align: right; }
+
 .post-content {
   margin-bottom: 3em; }
   .post-content img {
@@ -151,7 +159,8 @@ a {
     margin: 2em auto 3em;
     max-width: 100%; }
   .post-content p {
-    line-height: 1.8; }
+    line-height: 2;
+    margin-bottom: 1.5em; }
   .post-content h2,
   .post-content h3,
   .post-content h4 {

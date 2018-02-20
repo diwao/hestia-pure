@@ -6,6 +6,26 @@
   padding: 0 5%;
 }
 
+.post {
+  color: #444;
+
+  // &__catch {
+  //   border: 1px solid #eee;
+  //   display: block;
+  //   margin-bottom: 10px;
+  //   width: 100%;
+  // }
+
+  &__title {
+    font-size: 1.6em;
+  }
+
+  &__date {
+    color: #c2c6cc;
+    text-align: right;
+  }
+}
+
 .post-content {
   margin-bottom: 3em;
 
@@ -17,7 +37,8 @@
   }
 
   p {
-    line-height: 1.8;
+    line-height: 2;
+    margin-bottom: 1.5em;
     // word-wrap: break-word;
   }
 

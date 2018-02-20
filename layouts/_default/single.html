@@ -7,9 +7,6 @@
     <main class="main main--single">
       <!-- post -->
       <article class="post"　itemscope itemtype="http://schema.org/BlogPosting">
-        {{ if ne .Params.image "" }}
-        <img class="post__catch" src="/{{ .Params.image }}" alt="">
-        {{ end }}
         <h1 class="post__title">{{ .Title }}</h1>
         <p class="post__date">
           <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">{{ .Date.Format "2006.01.02" }}</time>

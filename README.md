@@ -1,5 +1,5 @@
 # Hestia Pure
-Hestia Pure is a simple hugo theme based PureCSS.
+Hestia Pure is a simple hugo theme, based Pure.
 
 ![screenshot](./static/image/theme/screenshot.png)
 

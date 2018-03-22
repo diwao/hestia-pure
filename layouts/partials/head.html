@@ -3,7 +3,7 @@
   <title>{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} - {{ .Site.Title }}{{ end }}</title>
   {{ .Hugo.Generator }}
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="diwao">
+  <meta name="author" content="{{ .Site.Author.author }}">
   {{ if eq $isHomePage true }}
   <meta name="description" content="{{ .Site.Params.description }}">
   {{ else }}
@@ -24,7 +24,6 @@
   <meta property="og:description" content="{{ .Summary }}">
   {{ end }}
   <meta property="og:type" content="blog">
-  <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:creator" content="@{{ .Site.Params.twitter }}">
   <meta name="twitter:title" content="{{ .Title }}">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en{{ end }}">
 {{ partial "head" . }}
 <body>
   <div id="wrap" class="wrap">

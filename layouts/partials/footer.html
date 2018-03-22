@@ -9,7 +9,7 @@
         {{ if and (.Site.Author.author) (ne .Site.Author.author "") }}
         <h3>{{ .Site.Author.author }}</h3>
         {{ else }}
-        <h3>{{ .Site.Params.author.author }}</h3>
+        <h3>Your Name</h3>
         {{ end }}
         {{ if and (.Site.Author.profile) (ne .Site.Author.profile "") }}
         <p>{{ .Site.Author.profile }}</p>

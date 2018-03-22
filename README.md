@@ -1,7 +1,7 @@
 # Hestia Pure
 Hestia Pure is a simple hugo theme, based Pure.
 
-![screenshot](/static/image/theme/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/diwao/hestia-pure/master/static/image/theme/screenshot.png)
 
 ## Installation & Usage
 Clone this repository to your hugo theme directory.

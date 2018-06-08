@@ -14,7 +14,7 @@
   <meta property="og:title" content="{{ .Title }}">
   <meta property="og:url" content="{{ .Permalink }}">
   {{ if and (.Params.image) (ne .Params.image "") }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.image }}">
+  <meta property="og:image" content="{{ if hasPrefix (string .Params.image) "http" }}{{ .Params.image }}{{ else }}{{ .Site.BaseURL }}{{ .Params.image }}{{ end }}">
   {{ else }}
   <meta property="og:image" content="{{ .Site.BaseURL }}image/theme/og.png">
   {{ end }}

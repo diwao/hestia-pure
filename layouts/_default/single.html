@@ -23,7 +23,7 @@
           {{ if .NextInSection }}
           <li class="pure-u-1 pure-u-md-1-2 post-nav-prev">
             <a href="{{.NextInSection.Permalink}}">
-              <span class="post-nav-label">新しい記事</span>
+              <span class="post-nav-label">Next</span>
               <span class="post-nav-title">
                 {{ .NextInSection.Title }}
               </span>
@@ -36,7 +36,7 @@
           {{ if .PrevInSection }}
           <li class="pure-u-1 pure-u-md-1-2 post-nav-next">
             <a href="{{.PrevInSection.Permalink}}">
-              <span class="post-nav-label">古い記事</span>
+              <span class="post-nav-label">Previous</span>
               <span class="post-nav-title">
                 {{ .PrevInSection.Title }}
               </span>
@@ -48,7 +48,7 @@
           {{ end }}
         </ol>
         <div class="post-nav-back">
-          <a class="pure-button" href="/">記事一覧へ戻る</a>
+          <a class="pure-button" href="/">Back</a>
         </div>
       </nav>
     <!-- /post-nav -->

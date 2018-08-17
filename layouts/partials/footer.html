@@ -37,6 +37,13 @@
             </a>
           </li>
           {{ end }}
+          {{ if and (.Site.Params.linkedin) (ne .Site.Params.linkedin "") }}
+          <li>
+            <a href="{{.Site.Params.linkedin}}" target="_blank">
+              <img src="/image/theme/linkedin.png" alt="linkedin">
+            </a>
+          </li>
+          {{ end }}
         </ul>
       </div>
     </div>

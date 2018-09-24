@@ -13,8 +13,8 @@
   <meta property="og:site_name" content="{{ .Site.Title }}">
   <meta property="og:title" content="{{ .Title }}">
   <meta property="og:url" content="{{ .Permalink }}">
-  {{ if and (.Params.image) (ne .Params.image "") }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.image }}">
+  {{ if and (.Site.Params.image) (ne .Site.Params.image "") }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Site.Params.image }}">
   {{ else }}
   <meta property="og:image" content="{{ .Site.BaseURL }}image/theme/og.png">
   {{ end }}

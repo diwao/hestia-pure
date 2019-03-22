@@ -5,8 +5,17 @@
   <div id="wrap" class="wrap">
     {{ partial "header" . }}
     <main class="main">
+    {{ if .Site.Params.links }}
+		<div class="dropdown" style="float:right;">
+			<button class="dropbtn">Links</button>
+			<div class="dropdown-content">
+			{{ range .Site.Params.links }}
+				<a href="{{ . }}">{{ . }}</a>
+			{{ end }}
+			</div>
+		</div>
+    {{ end }}
       <section class="articles">
-        <h2>Recent Post</h2>
         <div class="pure-g">
           {{ range (.Paginator 12).Pages }}
             {{ .Render "li" }}

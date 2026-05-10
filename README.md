@@ -6,7 +6,7 @@ Hestia Pure is a simple Hugo theme built with Pure.css.
 
 ## Requirements
 
-- Hugo 0.152.0 or newer
+- Hugo 0.161.1 or newer
 - No external asset build step is required
 
 ## Installation

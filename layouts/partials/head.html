@@ -1,48 +1,35 @@
+{{ $title := cond .IsHome .Site.Title (printf "%s - %s" .Title .Site.Title) }}
+{{ $description := cond .IsHome .Site.Params.description .Summary }}
+{{ $authorName := "" }}
+{{ with .Site.Params.author }}{{ with .name }}{{ $authorName = . }}{{ end }}{{ end }}
+{{ $image := "image/theme/og.png" | absURL }}
+{{ with .Params.image }}
+  {{ $image = cond (hasPrefix (string .) "http") . (. | absURL) }}
+{{ end }}
 <head>
   <meta charset="utf-8">
-  <title>{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} - {{ .Site.Title }}{{ end }}</title>
-  {{ .Hugo.Generator }}
+  <title>{{ $title }}</title>
+  {{ hugo.Generator }}
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="{{ .Site.Author.author }}">
-  {{ if eq $isHomePage true }}
-  <meta name="description" content="{{ .Site.Params.description }}">
-  {{ else }}
-  <meta name="description" content="{{ .Summary }}">
-  {{ end }}
-  <meta name="keywords" content="{{ .Site.Params.keywords }}">
+  {{ with $authorName }}<meta name="author" content="{{ . }}">{{ end }}
+  {{ with $description }}<meta name="description" content="{{ . }}">{{ end }}
+  {{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
   <meta property="og:site_name" content="{{ .Site.Title }}">
   <meta property="og:title" content="{{ .Title }}">
   <meta property="og:url" content="{{ .Permalink }}">
-  {{ if and (.Params.image) (ne .Params.image "") }}
-  <meta property="og:image" content="{{ if hasPrefix (string .Params.image) "http" }}{{ .Params.image }}{{ else }}{{ .Site.BaseURL }}{{ .Params.image }}{{ end }}">
-  {{ else }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}image/theme/og.png">
-  {{ end }}
-  {{ if eq $isHomePage true }}
-  <meta property="og:description" content="{{ .Site.Params.description }}">
-  {{ else }}
-  <meta property="og:description" content="{{ .Summary }}">
-  {{ end }}
+  <meta property="og:image" content="{{ $image }}">
+  {{ with $description }}<meta property="og:description" content="{{ . }}">{{ end }}
   <meta property="og:type" content="blog">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:creator" content="@{{ .Site.Params.twitter }}">
+  {{ with .Site.Params.twitter }}<meta name="twitter:creator" content="@{{ . }}">{{ end }}
   <meta name="twitter:title" content="{{ .Title }}">
   <meta name="twitter:url" content="{{ .Permalink }}">
-  {{ if eq $isHomePage true }}
-  <meta name="twitter:description" content="{{ .Site.Params.description }}">
-  {{ else }}
-  <meta name="twitter:description" content="{{ .Summary }}">
-  {{ end }}
-  {{ if and (.Params.image) (ne .Params.image "") }}
-  <meta name="twitter:image:src" content="{{ .Site.BaseURL }}{{ .Params.image }}">
-  {{ else }}
-  <meta name="twitter:image:src" content="{{ .Site.BaseURL }}image/theme/og.png">
-  {{ end }}
-  <link rel="shortcut icon" href="{{ .Site.BaseURL }}image/theme/favicon.ico">
-  <link href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css" rel="stylesheet" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/atom-one-dark.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
-  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="alternate" href="{{ .Site.BaseURL }}index.xml" type="application/rss+xml" title="{{ .Site.Title }}">
+  {{ with $description }}<meta name="twitter:description" content="{{ . }}">{{ end }}
+  <meta name="twitter:image" content="{{ $image }}">
+  <link rel="shortcut icon" href="{{ "image/theme/favicon.ico" | relURL }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@3.0.0/build/grids-responsive-min.css">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+  <link rel="alternate" href="{{ "index.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
 </head>

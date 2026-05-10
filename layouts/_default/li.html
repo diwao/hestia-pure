@@ -2,6 +2,10 @@
 {{ with .Params.image }}
   {{ $image = cond (hasPrefix (string .) "http") . (. | relURL) }}
 {{ end }}
+{{ $summary := .Site.Params.description }}
+{{ if .IsPage }}
+  {{ $summary = .Summary | plainify | htmlUnescape | truncate 160 }}
+{{ end }}
 <article class="card pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
   <a class="card__thumb" href="{{ .RelPermalink }}">
     <img src="{{ $image }}" alt="">
@@ -12,5 +16,5 @@
   <span>
     <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006.01.02" }}</time>
   </span>
-  <p>{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}</p>
+  <p>{{ $summary }}</p>
 </article>

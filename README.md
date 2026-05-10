@@ -48,7 +48,7 @@ profile = "A short profile shown in the footer."
 image = "image/theme/author.png"
 ```
 
-For compatibility, the theme still reads the legacy lowercase `googleanalytics` and `googlecustomsearch` parameter names. Author information should use `[params.author]` on current Hugo versions.
+For compatibility, the theme still reads the legacy lowercase `googleanalytics` and `googlecustomsearch` parameter names. Author information should use `[params.author]` on current Hugo versions; the legacy top-level `[author]` configuration is no longer supported.
 
 ## Development
 

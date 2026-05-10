@@ -1,5 +1,9 @@
 {{ $title := cond .IsHome .Site.Title (printf "%s - %s" .Title .Site.Title) }}
-{{ $description := cond .IsHome .Site.Params.description .Summary }}
+{{ $description := .Site.Params.description }}
+{{ if not .IsHome }}
+  {{ $description = or .Description .Summary }}
+{{ end }}
+{{ $description = $description | plainify | htmlUnescape | truncate 160 }}
 {{ $authorName := "" }}
 {{ with .Site.Params.author }}
   {{ with .author }}{{ $authorName = . }}{{ end }}

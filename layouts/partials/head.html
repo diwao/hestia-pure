@@ -1,7 +1,10 @@
 {{ $title := cond .IsHome .Site.Title (printf "%s - %s" .Title .Site.Title) }}
 {{ $description := cond .IsHome .Site.Params.description .Summary }}
 {{ $authorName := "" }}
-{{ with .Site.Params.author }}{{ with .name }}{{ $authorName = . }}{{ end }}{{ end }}
+{{ with .Site.Params.author }}
+  {{ with .author }}{{ $authorName = . }}{{ end }}
+  {{ with .name }}{{ $authorName = . }}{{ end }}
+{{ end }}
 {{ $image := "image/theme/og.png" | absURL }}
 {{ with .Params.image }}
   {{ $image = cond (hasPrefix (string .) "http") . (. | absURL) }}

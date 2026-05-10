@@ -1,6 +1,6 @@
 <article class="card pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
   <a class="card__thumb" href="{{ .Permalink }}">
-    <img src="{{ if and (.Params.image) (ne .Params.image "") }}/{{ .Params.image }}{{ else }}/image/theme/og.png{{ end }}" alt="">
+    <img src="{{ if hasPrefix (string .Params.image) "http" }}{{ .Params.image }}{{ else if and (.Params.image) (ne .Params.image "") }}/{{ .Params.image }}{{ else }}/image/theme/og.png{{ end }}" alt="">
   </a>
   <a href="{{ .Permalink }}">
     <h3>{{ .Title }}</h3>

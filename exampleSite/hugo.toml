@@ -1,5 +1,5 @@
 baseURL = "https://example.com/"
-locale = "en-US"
+languageCode = "en-US"
 title = "Hestia Pure Example"
 theme = "hestia-pure"
 

@@ -29,7 +29,7 @@ The recommended configuration shape is:
 
 ```toml
 baseURL = "https://example.com/"
-locale = "en-US"
+languageCode = "en-US"
 title = "Example Site"
 theme = "hestia-pure"
 

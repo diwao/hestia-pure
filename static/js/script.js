@@ -1,1 +1,1 @@
-// 自由に編集してください
+// Add custom JavaScript here.

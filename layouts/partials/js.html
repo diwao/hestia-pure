@@ -1,4 +1,4 @@
-{{ with .Site.Params.googlecustomsearch }}
+{{ with or .Site.Params.googleCustomSearch .Site.Params.googlecustomsearch }}
 <script>
   (function() {
     var cx = '{{ . }}';
@@ -10,14 +10,20 @@
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>{{ end }}
-{{ with .Site.Params.googleanalytics }}<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	ga('create', '{{ . }}', 'auto');
-	ga('send', 'pageview');
-</script>{{ end }}
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<script src="/js/script.js"></script>
+{{ with .Site.Params.googleanalytics }}{{ if hasPrefix (string .) "G-" }}<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ . }}');
+</script>{{ else }}<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '{{ . }}', 'auto');
+  ga('send', 'pageview');
+</script>{{ end }}{{ end }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script src="{{ "js/script.js" | relURL }}"></script>

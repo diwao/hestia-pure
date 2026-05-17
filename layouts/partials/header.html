@@ -1,8 +1,11 @@
 <header class="header">
-  {{ $isHomePage := eq .Title .Site.Title }}{{ if eq $isHomePage true }}
-  <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>{{ end }}{{ if eq $isHomePage false }}<div class="site-title"><a href="/">{{ .Site.Title }}</a></div>{{ end }}
-  <p class="site-desc">{{ .Site.Params.description }}</p>
-  {{ if .Site.Params.googlecustomsearch }}
+  {{ if .IsHome }}
+  <h1><a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a></h1>
+  {{ else }}
+  <div class="site-title"><a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a></div>
+  {{ end }}
+  {{ with .Site.Params.description }}<p class="site-desc">{{ . }}</p>{{ end }}
+  {{ if or .Site.Params.googleCustomSearch .Site.Params.googlecustomsearch }}
   <div class="search">
     <gcse:searchbox-only></gcse:searchbox-only>
   </div>

@@ -6,8 +6,8 @@
     {{ partial "header" . }}
     <main class="main">
       <h2>404 Page not found.</h2>
-      <p>お探しのページは見つかりませんでした。入力したURLが間違っているかページが削除された可能性があります。</p>
-      <p>URLをご確認のうえ再読み込みを行うか、<a href="/">トップページ</a>へとお戻りくださいm(_ _)m</p>
+      <p>The page you are looking for could not be found. The URL may be incorrect, or the page may have been removed.</p>
+      <p>Please check the URL and try again, or return to the <a href="{{ .Site.Home.RelPermalink }}">home page</a>.</p>
     </main>
   </div>
 {{ partial "js" . }}
